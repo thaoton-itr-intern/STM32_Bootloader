@@ -1,0 +1,40 @@
+16:46:01 **** Incremental Build of configuration Debug for project Blinky ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Blinky.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Thao\Intern\Bootloader_Thao\Application_thao\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blinky.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Blinky.elf
+ 
+arm-none-eabi-size   Blinky.elf 
+arm-none-eabi-objdump -h -S  Blinky.elf  > "Blinky.list"
+arm-none-eabi-objcopy  -O ihex  Blinky.elf  "Blinky.hex"
+   text	   data	    bss	    dec	    hex	filename
+  12284	    112	   1976	  14372	   3824	Blinky.elf
+arm-none-eabi-objcopy  -O binary  Blinky.elf  "Blinky.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Blinky.bin
+Finished building: Blinky.hex
+Finished building: Blinky.list
+ 
+ 
+ 
+16:46:08 **** Incremental Build of configuration Debug for project Bootloader_thao ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Bootloader_thao.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Thao\Intern\Bootloader_Thao\Bootloader_thao\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Bootloader_thao.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Bootloader_thao.elf
+ 
+arm-none-eabi-size   Bootloader_thao.elf 
+arm-none-eabi-objdump -h -S  Bootloader_thao.elf  > "Bootloader_thao.list"
+arm-none-eabi-objcopy  -O ihex  Bootloader_thao.elf  "Bootloader_thao.hex"
+arm-none-eabi-objcopy  -O binary  Bootloader_thao.elf  "Bootloader_thao.bin"
+   text	   data	    bss	    dec	    hex	filename
+  16512	    112	   3120	  19744	   4d20	Bootloader_thao.elf
+Finished building: default.size.stdout
+ 
+Finished building: Bootloader_thao.bin
+Finished building: Bootloader_thao.hex
+ 
+ 
+Finished building: Bootloader_thao.list
+ 
